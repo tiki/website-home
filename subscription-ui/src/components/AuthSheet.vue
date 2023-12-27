@@ -2,6 +2,7 @@
 import { ref, defineEmits } from 'vue'
 import { Subscription } from '@/subscription'
 import type { ProfileInfo } from '@/interfaces/ProfileInfo'
+import { H } from 'highlight.run'
 
 const subscription = new Subscription()
 
@@ -14,8 +15,10 @@ const submit = async () => {
       error.value = 'Invalid auth token'
       return
     }
-    sessionStorage.setItem('userId', response.userId)
-    sessionStorage.setItem('orgId', response.orgId)
+    H.identify(response.email, {
+      userId: response.userId,
+      orgId: response.orgId
+    })
     emit('submit', token.value)
     return
   }
