@@ -2,8 +2,8 @@
 import { ref, onMounted } from 'vue'
 import * as monaco from 'monaco-editor'
 import 'monaco-sql-languages/out/esm/trinosql/trinosql.contribution'
-import { ButtonState } from '@/interfaces/ButtonState'
-import TextButton from './TextButton.vue'
+import { ButtonState } from '@/interfaces'
+import { TextButton } from './'
 
 let editorMonaco: monaco.editor.IStandaloneCodeEditor
 
@@ -33,8 +33,8 @@ onMounted(() => {
     fontSize: 12,
     fontWeight: '300',
     scrollbar: {
-      horizontal: "hidden",
-      vertical: "hidden",
+      horizontal: 'hidden',
+      vertical: 'hidden',
       verticalScrollbarSize: 0
     }
   })

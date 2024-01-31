@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Subscription } from '@/subscription'
-import type { ProfileInfo } from '@/interfaces/ProfileInfo'
-import HeaderTitle from './HeaderTitle.vue'
-import TextButton from './TextButton.vue'
-import { ButtonState } from '@/interfaces/ButtonState'
-import AlertComponent from './AlertComponent.vue'
-import { BuilderState } from '@/interfaces/BuilderState'
+import { Subscription } from '../subscription'
+import type { ProfileInfo } from '../interfaces/ProfileInfo'
+import HeaderTitle from '../components/HeaderTitle.vue'
+import TextButton from '../components/TextButton.vue'
+import { ButtonState } from '../interfaces/ButtonState'
+import AlertComponent from '../components/AlertComponent.vue'
+import { BuilderState } from '../interfaces/BuilderState'
 
 const subscription = new Subscription()
 
@@ -37,7 +37,7 @@ const error = ref<string>()
     <header-title />
     <alert-component
       :type="BuilderState.ERROR"
-      :text="'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'"
+      :text="'Uh oh! Your authetication failed. Please review your token and try again.'"
       v-if="error"
       @cancel="error = undefined"
     />

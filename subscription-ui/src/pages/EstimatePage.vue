@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import tableTaxonomy from './tableTaxonomy.vue'
-import InputComponent from './InputComponent.vue'
-import HeaderTitle from './HeaderTitle.vue'
-import AlertComponent from './AlertComponent.vue'
-import { BuilderState } from '@/interfaces/BuilderState'
-import { Subscription } from '@/subscription'
+import { TableTaxonomy, InputComponent, HeaderTitle, AlertComponent } from '../components'
+import { BuilderState } from '../interfaces'
+import { Subscription } from '../subscription'
 
 const emits = defineEmits(['estimate'])
 
@@ -70,9 +67,7 @@ const cancelRequest = () => {
 </script>
 
 <template>
-  <div
-    class="w-3/5 pr-10 border-r border-solid border-tiki-black/10 gap-1.5 flex flex-col"
-  >
+  <div class="w-3/5 pr-10 border-r border-solid border-tiki-black/10 gap-1.5 flex flex-col">
     <header-title />
     <alert-component
       :type="
@@ -94,20 +89,20 @@ const cancelRequest = () => {
       <div class="w-full">
         <div class="mb-8">
           <input-component
-          :title="'CLEANROOM'"
-          :description="'The unique ID for the cleanroom where your data is stored.'"
-          :type="'cleanroomSelect'"
-          @update-cleanroom="(value) => (cleanroomId = value)"
+            :title="'CLEANROOM'"
+            :description="'The unique ID for the cleanroom where your data is stored.'"
+            :type="'cleanroomSelect'"
+            @update-cleanroom="(value) => (cleanroomId = value)"
           />
         </div>
         <div class="mb-8">
-        <input-component
-          :title="'TABLE NAME'"
-          :description="'The name of the table to be created. Follow SQL conventions: lowercase and underscore.'"
-          :type="'input'"
-          :placeholder="'my_first_table'"
-          @update-table-name="(value) => (tableName = value)"
-        />
+          <input-component
+            :title="'TABLE NAME'"
+            :description="'The name of the table to be created. Follow SQL conventions: lowercase and underscore.'"
+            :type="'input'"
+            :placeholder="'my_first_table'"
+            @update-table-name="(value) => (tableName = value)"
+          />
         </div>
         <input-component
           :title="'CREATE FILTER'"

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Subscription } from '../subscription/index'
-import { type Cleanroom } from '../interfaces/Cleanroom'
+import { Subscription } from '../subscription'
+import { type Cleanroom } from '../interfaces'
 
 const subscription = new Subscription()
 

@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import cleanroomSelect from './cleanroomSelect.vue'
-import queryEditor from './queryEditor.vue'
-import querySample from './querySample.vue'
-import queryInfo from './queryInfo.vue'
+import { CleanroomSelect, QueryEditor, QuerySample, QueryInfo } from './'
 import { type PropType } from 'vue'
-import { type QueryInfo } from '@/interfaces/QueryInfo'
+import { type QueryInfoType } from '@/interfaces'
 
 defineEmits(['updateCleanroom', 'submit', 'updateTableName'])
 
@@ -26,7 +23,7 @@ defineProps({
     required: false
   },
   info: {
-    type: Object as PropType<QueryInfo>,
+    type: Object as PropType<QueryInfoType>,
     required: false
   },
   sample: {
@@ -38,13 +35,13 @@ defineProps({
 const componentHandler = (type: string) => {
   switch (type) {
     case 'cleanroomSelect':
-      return cleanroomSelect
+      return CleanroomSelect
     case 'queryEditor':
-      return queryEditor
+      return QueryEditor
     case 'sampleData':
-      return querySample
+      return QuerySample
     case 'queryInfo':
-      return queryInfo
+      return QueryInfo
     default:
       return type
   }

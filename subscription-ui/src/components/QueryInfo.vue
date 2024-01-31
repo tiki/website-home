@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { type PropType } from 'vue'
-import type { QueryInfo } from '../interfaces/QueryInfo'
+import { type QueryInfoType } from '../interfaces'
 
 defineProps({
   info: {
-    type: Object as PropType<QueryInfo>,
+    type: Object as PropType<QueryInfoType>,
     required: true
   }
 })

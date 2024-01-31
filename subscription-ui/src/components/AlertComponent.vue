@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import { BuilderState } from '@/interfaces/BuilderState'
+import { BuilderState } from '@/interfaces'
 
 defineEmits(['cancel'])
 

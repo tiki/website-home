@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { demographics, transactions, receipts } from '../interfaces/TableTaxonomies'
+import { demographics, transactions, receipts } from '../interfaces'
 
 const tables = ['demographics', 'receipts', 'transactions']
 
@@ -25,7 +25,7 @@ const updateTable = (event: any) => {
     <h1 class="text-xs text-tiki-gray font-medium mb-4">TABLES</h1>
     <details v-for="table in tables" class="w-full" :id="table" :key="table" @toggle="updateTable">
       <summary
-        class="flex flex-row-reverse py-1 cursor-pointer text-tiki-gray font-normal capitalize my-1  w-full text-xs"
+        class="flex flex-row-reverse py-1 cursor-pointer text-tiki-gray font-normal capitalize my-1 w-full text-xs"
       >
         {{ table }}
         <span></span>

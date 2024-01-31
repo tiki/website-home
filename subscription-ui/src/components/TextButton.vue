@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ButtonState } from '@/interfaces/ButtonState'
+import { ButtonState } from '@/interfaces'
 import type { PropType } from 'vue'
 
 defineEmits(['submit'])

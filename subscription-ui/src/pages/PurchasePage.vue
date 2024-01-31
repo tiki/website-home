@@ -1,18 +1,12 @@
 <script setup lang="ts">
-import type { QueryInfo } from '@/interfaces/QueryInfo'
-import HeaderTitle from './HeaderTitle.vue'
+import { type QueryInfoType, ButtonState, type SubscriptionType, BuilderState } from '../interfaces'
+import { HeaderTitle, InputComponent, TextButton, AlertComponent } from '../components'
 import { type PropType, ref } from 'vue'
-import InputComponent from './InputComponent.vue'
-import TextButton from './TextButton.vue'
-import { ButtonState } from '@/interfaces/ButtonState'
-import { Subscription } from '@/subscription'
-import type { SubscriptionType } from '@/interfaces/Subscription'
-import AlertComponent from './AlertComponent.vue'
-import { BuilderState } from '@/interfaces/BuilderState'
+import { Subscription } from '../subscription'
 
 const props = defineProps({
   estimateInfo: {
-    type: Object as PropType<QueryInfo>,
+    type: Object as PropType<QueryInfoType>,
     required: true
   }
 })
@@ -38,9 +32,7 @@ const error = ref<string>()
 </script>
 
 <template>
-  <div
-    class="w-3/5 pr-10 border-r border-solid border-tiki-black/10 gap-1.5 flex flex-col"
-  >
+  <div class="w-3/5 pr-10 border-r border-solid border-tiki-black/10 gap-1.5 flex flex-col">
     <header-title />
     <alert-component
       :type="BuilderState.ERROR"

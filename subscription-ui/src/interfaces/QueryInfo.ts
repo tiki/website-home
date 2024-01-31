@@ -1,4 +1,4 @@
-export interface QueryInfo {
+export interface QueryInfoType {
   subscriptionId: string
   costs: string
   annualCost: string
